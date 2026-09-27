@@ -13,5 +13,5 @@ Homebrew auto-taps this repository, so no separate `brew tap` is needed.
 
 `Casks/opencode-credit.rb` is refreshed automatically from the latest release of
 `louisvolant/opencode-credit` by the `Update cask` workflow
-(`scripts/update-cask.sh`). It runs daily, on demand, and can also be triggered
-from the app repository's release workflow.
+(`scripts/update-cask.sh`). It runs daily and on demand (Actions → Update cask →
+Run workflow).
