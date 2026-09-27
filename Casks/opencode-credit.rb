@@ -13,9 +13,16 @@ cask "opencode-credit" do
   app "OpenCode Credit.app"
 
   caveats <<~EOS
-    OpenCode Credit is not notarised by Apple, so macOS refuses to launch it
-    the first time. Right-click the app and choose "Open", or run:
+    OpenCode Credit is not notarised by Apple, so macOS blocks the first
+    launch. On macOS 15 and later, right-click -> Open is not always enough.
+
+    Either open System Settings -> Privacy & Security and click "Open Anyway",
+    or run:
       xattr -dr com.apple.quarantine "/Applications/OpenCode Credit.app"
+
+    Alternatively, install the build-from-source formula, which is not
+    quarantined (it compiles locally, so no Gatekeeper prompt):
+      brew install --formula louisvolant/opencode-statusbar/opencode-credit
   EOS
 
   zap trash: "~/Library/Preferences/com.louisvolant.opencode-credit.plist"
