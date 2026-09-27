@@ -11,7 +11,7 @@ set -euo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 CASK="$ROOT/Casks/opencode-credit.rb"
-FORMULA="$ROOT/Formula/opencode-credit.rb"
+FORMULA="$ROOT/Formula/opencode-credit-src.rb"
 REPO="${APP_REPO:-louisvolant/opencode-credit}"
 
 tag="$(gh release view --repo "$REPO" --json tagName --jq .tagName)"
@@ -44,4 +44,4 @@ awk -v tag="$tag" -v revision="$revision" '
 mv "$tmp" "$FORMULA"
 
 echo "Updated Casks/opencode-credit.rb to ${version} (sha256 ${sha})"
-echo "Updated Formula/opencode-credit.rb to ${tag} (revision ${revision})"
+echo "Updated Formula/opencode-credit-src.rb to ${tag} (revision ${revision})"

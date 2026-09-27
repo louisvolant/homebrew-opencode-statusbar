@@ -22,7 +22,8 @@ cask "opencode-credit" do
 
     Alternatively, install the build-from-source formula, which is not
     quarantined (it compiles locally, so no Gatekeeper prompt):
-      brew install --formula louisvolant/opencode-statusbar/opencode-credit
+      brew trust --formula louisvolant/opencode-statusbar/opencode-credit-src
+      brew install --formula louisvolant/opencode-statusbar/opencode-credit-src
   EOS
 
   zap trash: "~/Library/Preferences/com.louisvolant.opencode-credit.plist"

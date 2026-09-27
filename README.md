@@ -8,7 +8,7 @@ Homebrew auto-taps this repository, so no separate `brew tap` is needed.
 
 ## Install
 
-Prebuilt app:
+Prebuilt app (recommended):
 
 ```sh
 brew install --cask louisvolant/opencode-statusbar/opencode-credit
@@ -25,15 +25,18 @@ Build from source (compiles locally, so the app is **not quarantined** and there
 is no Gatekeeper prompt; requires the Command Line Tools):
 
 ```sh
-brew install --formula louisvolant/opencode-statusbar/opencode-credit
+brew trust --formula louisvolant/opencode-statusbar/opencode-credit-src
+brew install --formula louisvolant/opencode-statusbar/opencode-credit-src
 ```
 
-The formula installs the app under the Homebrew prefix; copy it to
-`/Applications` to use it from the menu bar and to enable "Launch at login".
+Homebrew 7 requires trusting third-party tap formulae before loading them; the
+cask does not need this. The formula installs the app under the Homebrew prefix;
+copy it to `/Applications` to use it from the menu bar and to enable "Launch at
+login".
 
 ## Maintenance
 
-`Casks/opencode-credit.rb` and `Formula/opencode-credit.rb` are refreshed
+`Casks/opencode-credit.rb` and `Formula/opencode-credit-src.rb` are refreshed
 automatically from the latest release of `louisvolant/opencode-credit` by the
 `Update cask and formula` workflow (`scripts/update.sh`). It runs daily and on
 demand (Actions → Update cask and formula → Run workflow).
