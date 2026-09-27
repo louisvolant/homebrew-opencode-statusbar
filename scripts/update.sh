@@ -37,7 +37,7 @@ mv "$tmp" "$CASK"
 
 tmp="$(mktemp)"
 awk -v tag="$tag" -v revision="$revision" '
-  /^      tag: /      { print "      tag:      \"" tag "\"";        next }
+  /^      tag: /      { print "      tag:      \"" tag "\",";       next }
   /^      revision: / { print "      revision: \"" revision "\""; next }
   { print }
 ' "$FORMULA" > "$tmp"
@@ -45,3 +45,7 @@ mv "$tmp" "$FORMULA"
 
 echo "Updated Casks/opencode-credit.rb to ${version} (sha256 ${sha})"
 echo "Updated Formula/opencode-credit-src.rb to ${tag} (revision ${revision})"
+
+# Guard against syntax regressions before the workflow commits anything.
+ruby -c "$CASK" >/dev/null
+ruby -c "$FORMULA" >/dev/null
