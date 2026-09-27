@@ -1,6 +1,6 @@
 cask "opencode-credit" do
-  version "1.0.1"
-  sha256 "b22b5b9f797a1b4263dfde0582de2066bdb90baa1dbb9501c7e7fc6cbb414150"
+  version "1.0.2"
+  sha256 "0e9fe2bc1b15e88ab489675fbdc95dd2805f641e4627375a2144304a2dd3c82d"
 
   url "https://github.com/louisvolant/opencode-credit/releases/download/v#{version}/OpenCodeCredit-#{version}.zip"
   name "OpenCode Credit"
