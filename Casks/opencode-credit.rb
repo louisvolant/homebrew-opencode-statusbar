@@ -26,5 +26,7 @@ cask "opencode-credit" do
       brew install --formula louisvolant/opencode-statusbar/opencode-credit-src
   EOS
 
+  uninstall quit: "com.louisvolant.opencode-credit"
+
   zap trash: "~/Library/Preferences/com.louisvolant.opencode-credit.plist"
 end
