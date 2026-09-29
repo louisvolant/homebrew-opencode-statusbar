@@ -2,8 +2,8 @@ class OpencodeCreditSrc < Formula
   desc "Menu bar app showing OpenCode Go usage and Zen credit"
   homepage "https://github.com/louisvolant/opencode-credit"
   url "https://github.com/louisvolant/opencode-credit.git",
-      tag:      "v1.0.12",
-      revision: "b5a02c2857f1aa314687570eda5df11910edb287"
+      tag:      "v1.0.13",
+      revision: "c35c3829634a8254c21615a6a7945f8deddf9be0"
   license "MIT"
 
   depends_on arch: :arm64
